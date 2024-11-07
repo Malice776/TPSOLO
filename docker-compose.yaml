@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    build: 
+      context : ./my-node-app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - redis
+  redis:
+    image: "redis:latest"
+    ports:
+      - "6379:6379"
